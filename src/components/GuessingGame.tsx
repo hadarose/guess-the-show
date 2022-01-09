@@ -53,6 +53,7 @@ const GuessingGame = ({ shows }: Props) => {
   }, [correctGuesses, wrongGuesses, points, randomShowName, shouldPlay]);
 
   const nextStage = () => {
+    setShouldPlay(true);
     setCorrectGuesses([]);
     setWrongGuesses([]);
 
@@ -74,10 +75,16 @@ const GuessingGame = ({ shows }: Props) => {
     <>
       <div className="container">
         <div className="row">
-          <div className="col-4">
-            <WrongGuesses wrongGuesses={wrongGuesses} />
-          </div>
-          <div className="col-8 text-white">
+          {wrongGuesses.length > 0 && (
+            <div className="col-4">
+              <WrongGuesses wrongGuesses={wrongGuesses} />
+            </div>
+          )}
+          <div
+            className={
+              wrongGuesses.length > 0 ? "col-8 text-white" : "col text-white"
+            }
+          >
             <h1 className="display-6">You have {points} life points left!</h1>
             <Show randomShow={randomShowName} correctGuesses={correctGuesses} />
             <Hint

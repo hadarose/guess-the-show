@@ -5,7 +5,7 @@ type Props = {
 };
 
 const WrongGuesses = ({ wrongGuesses }: Props) => (
-  <>
+  <div>
     {wrongGuesses.length > 0 && (
       <div>
         <h1 className="display-6">Wrong Guesses:</h1>
@@ -16,7 +16,7 @@ const WrongGuesses = ({ wrongGuesses }: Props) => (
         ))}
       </div>
     )}
-  </>
+  </div>
 );
 
 export default WrongGuesses;
