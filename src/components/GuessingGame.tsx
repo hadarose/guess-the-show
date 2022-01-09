@@ -43,7 +43,8 @@ const GuessingGame = ({ shows }: Props) => {
         key !== "Shift" &&
         key !== "Alt" &&
         key !== "CapsLock" &&
-        key !== "Control"
+        key !== "Control" &&
+        key !== "Meta"
       ) {
         const letter: string = key.toLowerCase();
         if (randomShowName?.includes(letter)) {
