@@ -34,7 +34,17 @@ const GuessingGame = ({ shows }: Props) => {
     const handleKeyDown = (event: KeyboardEvent): void => {
       const { key } = event;
 
-      if (shouldPlay && !/[^a-zA-Z]/.test(key)) {
+      if (
+        shouldPlay &&
+        !/[^a-zA-Z]/.test(key) &&
+        key !== "Enter" &&
+        key !== "Space" &&
+        key !== "Escape" &&
+        key !== "Shift" &&
+        key !== "Alt" &&
+        key !== "CapsLock" &&
+        key !== "Control"
+      ) {
         const letter: string = key.toLowerCase();
         if (randomShowName?.includes(letter)) {
           if (!correctGuesses.includes(letter)) {
