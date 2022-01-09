@@ -1,10 +1,15 @@
 import React from "react";
 
-const Show = ({ randomShow, correctGuesses }) => {
+type Props = {
+  randomShow: String | undefined;
+  correctGuesses: Array<string>;
+};
+
+const Show = ({ randomShow, correctGuesses }: Props) => {
   console.log({ randomShow });
   return (
     <div>
-      {randomShow.split("").map((letter, index) => {
+      {randomShow?.split("").map((letter, index) => {
         if (letter === " ") {
           return <span key={index}>&nbsp;&nbsp;&nbsp;&nbsp;</span>;
         } else {
