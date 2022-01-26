@@ -39,7 +39,7 @@ const PopUp = ({
 
   if (checkWin() === "win") {
     message = "Execellent! 😃 ";
-    shouldPlay = false;
+    shouldPlay = true;
   } else if (checkWin() === "lose") {
     message = "Game Over 😕";
     loseMessage = `The show was: ${randomShow?.toUpperCase()}`;
@@ -59,7 +59,7 @@ const PopUp = ({
         <h2>{message}</h2>
         <h3>{loseMessage}</h3>
         <button onClick={points ? nextStage : replay}>
-          {shouldPlay ? "Next Stage " : "Play Again"}
+          {points ? "Next Stage " : "Play Again"}
         </button>
       </div>
     </div>
